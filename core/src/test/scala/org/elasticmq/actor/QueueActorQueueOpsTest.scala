@@ -8,7 +8,7 @@ import org.joda.time.{Duration, DateTime}
 
 class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with DataCreationHelpers {
 
-  waitTest("queue modified and created dates should be stored") {
+  test("queue modified and created dates should be stored") {
     // Given
     val created = new DateTime(1216168602L)
     val lastModified = new DateTime(1316168602L)
@@ -39,7 +39,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("updating a queue") {
+  test("updating a queue") {
     // Given
     val q1 = createQueueData("q1", MillisVisibilityTimeout(1L))
     val q1Modified = createQueueData("q1", MillisVisibilityTimeout(100L))
@@ -56,7 +56,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("tagging a queue on creation") {
+  test("tagging a queue on creation") {
     val tags = Map("tag1" -> "tagged1", "tag2" -> "tagged2")
     val q1 = createQueueData("q1", MillisVisibilityTimeout(1L), tags = tags)
 
@@ -68,7 +68,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("tagging a queue after creation") {
+  test("tagging a queue after creation") {
     val tags = Map("tag1" -> "tagged1", "tag2" -> "tagged2")
     val q1 = createQueueData("q1", MillisVisibilityTimeout(1L))
 
@@ -81,7 +81,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("adding a tag to existing tags") {
+  test("adding a tag to existing tags") {
     val tags = Map("tag1" -> "tagged1", "tag2" -> "tagged2")
     val newTag = Map("tag3" -> "tagged3")
     val q1 = createQueueData("q1", MillisVisibilityTimeout(1L), tags = tags)
@@ -95,7 +95,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("updating an existing tag") {
+  test("updating an existing tag") {
     val tags = Map("tag1" -> "tagged1", "tag2" -> "tagged2")
     val newTag = Map("tag1" -> "tagged3")
     val q1 = createQueueData("q1", MillisVisibilityTimeout(1L), tags = tags)
@@ -109,7 +109,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("queue statistics without messages") {
+  test("queue statistics without messages") {
     // Given
     val queue = createQueueData("q1", MillisVisibilityTimeout(1L))
 
@@ -124,7 +124,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("queue statistics with messages") {
+  test("queue statistics with messages") {
     // Given
     val queue = createQueueData("q1", MillisVisibilityTimeout(100L))
 
@@ -172,7 +172,7 @@ class QueueActorQueueOpsTest extends ActorTest with QueueManagerForEachTest with
     }
   }
 
-  waitTest("clearing a queue") {
+  test("clearing a queue") {
     // Given
     val queue = createQueueData("q1", MillisVisibilityTimeout(100L))
 

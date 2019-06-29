@@ -5,12 +5,12 @@ addSbtPlugin("com.softwaremill.sbt-softwaremill" % "sbt-softwaremill" % "1.4.2")
 
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.9")
 
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.1")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.6.0")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.17")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.23")
 
 addSbtPlugin("ohnosequences" % "sbt-github-release" % "0.7.1")
 
-libraryDependencies += "com.amazonaws" % "aws-java-sdk-s3" % "1.11.499"
+libraryDependencies += "com.amazonaws" % "aws-java-sdk-s3" % "1.11.566"
 
 scalacOptions in ThisBuild ++= Seq("-unchecked", "-deprecation")
